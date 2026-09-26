@@ -1,3 +1,4 @@
+
 "use client";
 
 import { createContext, useContext, useState } from "react";
@@ -10,19 +11,78 @@ export function FitLogProvider({ children }) {
   const [toast, setToast] = useState("");
 
 function addToPlan(workout) {
-    setPlan([...plan, workout]);
+  const alreadyAdded = plan.some(
+    (item) => item.id === workout.id
+  );
 
-    setToast("Added to today's plan");
+  if (alreadyAdded) {
+    setToast("Already added to today's plan");
+
+    setTimeout(() => {
+      setToast("");
+    }, 2000);
+
+    return;
+  }
+
+  setPlan((currentPlan) => [...currentPlan, workout]);
+
+  setToast("Added to today's plan");
+
+  setTimeout(() => {
+    setToast("");
+  }, 2000);
+}
+
+function saveWorkout(workout) {
+  const alreadySaved = saved.some(
+    (item) => item.id === workout.id
+  );
+
+  if (alreadySaved) {
+    setToast("Already saved for later");
+
+    setTimeout(() => {
+      setToast("");
+    }, 2000);
+
+    return;
+  }
+
+  setSaved((currentSaved) => [...currentSaved, workout]);
+
+  setToast("Saved for later");
+
+  setTimeout(() => {
+    setToast("");
+  }, 2000);
+}
+  function removeFromPlan(id) {
+    setPlan((currentPlan) =>
+      currentPlan.filter((workout) => workout.id !== id)
+    );
+
+    setToast("Removed from today's plan");
 
     setTimeout(() => {
       setToast("");
     }, 2000);
   }
 
-  function saveWorkout(workout) {
-    setSaved([...saved, workout]);
+  function removeFromSaved(id) {
+    setSaved((currentSaved) =>
+      currentSaved.filter((workout) => workout.id !== id)
+    );
 
-    setToast("Saved for later");
+    setToast("Removed from saved");
+
+    setTimeout(() => {
+      setToast("");
+    }, 2000);
+  }
+
+  function markAsDone(workout) {
+    setToast(`${workout.name} marked as done`);
 
     setTimeout(() => {
       setToast("");
@@ -36,6 +96,9 @@ function addToPlan(workout) {
         saved,
         addToPlan,
         saveWorkout,
+        removeFromPlan,
+        removeFromSaved,
+        markAsDone,
         toast,
       }}
     >
@@ -53,3 +116,4 @@ function addToPlan(workout) {
 export function useFitLog() {
   return useContext(FitLogContext);
 }
+
