@@ -48,7 +48,7 @@ export default function WorkoutLibrary() {
         </h2>
 
         <p className="mt-2 text-sm text-gray-400">
-          Find the right workout and start training with intent.
+         Twelve lifts covering every major muscle group.
         </p>
       </div>
 

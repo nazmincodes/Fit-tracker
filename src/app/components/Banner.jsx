@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <section className="w-full bg-[#171716] px-2 py-2 text-white">
+    <section className="w-full bg-[#171716] py-2 text-white">
       
       {/* Banner Card */}
       <div className="w-full rounded-md border border-[#292c34] bg-[#111318] px-6 py-8 md:px-10 md:py-10">
@@ -22,8 +22,8 @@ export default function Banner() {
             </h1>
 
             <p className="mt-4 max-w-md text-xs leading-5 text-[#8b8d92] md:text-sm">
-              Discover workouts, build your daily plan, and track every
-              workout with FitLog.
+             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
+             into today's plan, and watch the week's work add up.
             </p>
 
             <a
