@@ -1,12 +1,13 @@
-
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useFitLog } from "../context/FitLogContext";
 
 export default function Navbar() {
   const { plan, saved } = useFitLog();
+  const pathname = usePathname();
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full flex justify-between items-center py-3 navbar bg-black text-white px-6">
@@ -38,14 +39,22 @@ export default function Navbar() {
 
           <Link
             href="/"
-            className="font-medium text-[#ccff00] border-0 bg-[#383a32] px-4 py-1 rounded-2xl hover:text-[#5e673a]"
+            className={`font-medium px-4 py-1 rounded-2xl transition-colors ${
+              pathname === "/"
+                ? "text-[#ccff00] bg-[#383a32]"
+                : "text-white hover:text-[#ccff00]"
+            }`}
           >
             Workouts
           </Link>
 
           <Link
             href="/my-plan"
-            className="font-medium hover:text-[#ccff00]"
+            className={`font-medium px-4 py-1 rounded-2xl transition-colors ${
+              pathname === "/my-plan"
+                ? "text-[#ccff00] bg-[#383a32]"
+                : "text-white hover:text-[#ccff00]"
+            }`}
           >
             My Plan
           </Link>

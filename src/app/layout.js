@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       >
         <FitLogProvider>
           <Navbar />
-          <div className="flex-1">{children}</div>
+           <div className="flex-1">{children}</div>
           <Footer />
         </FitLogProvider>
       </body>
