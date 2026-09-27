@@ -105,7 +105,7 @@ function saveWorkout(workout) {
       {children}
 
       {toast && (
-        <div className="fixed bottom-5 right-5 z-50 rounded-md bg-[#ccff00] px-4 py-3 font-bold text-black">
+        <div className="fixed top-5 right-5 z-50 rounded-md bg-amber-100 px-4 py-3 font-bold text-black">
           {toast}
         </div>
       )}

@@ -44,7 +44,7 @@ export default function MyPlan() {
   }
 
   return (
-    <main className="min-h-screen bg-[#171716] px-6 py-12 text-white">
+    <main className="pt-20 min-h-screen bg-[#171716] px-6 py-12 text-white">
       <div className="mx-auto max-w-6xl">
 
         {/* Heading */}

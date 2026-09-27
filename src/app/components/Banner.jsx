@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <section className="w-full bg-[#0a0a07] py-2 text-white">
+    <section className="pt-15 w-full bg-[#0a0a07] py-2 text-white">
 
       {/* One Card */}
-      <div className="w-full rounded-md border border-[#292c34] bg-[#111318] px-6 py-10 md:px-10 md:py-20">
+      <div className="mx-3 rounded-md border border-[#292c34] bg-[#111318] py-20 md:px-10 md:py-20">
 
-        <div className="flex min-h-[300px] items-center">
+        <div className="flex min-h-[250] items-center">
 
           {/* Left Content */}
           <div className="w-1/2">

@@ -28,7 +28,7 @@ export default function WorkoutDetails() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#171716] flex items-center justify-center text-white">
+      <div className=" min-h-screen bg-[#171716] flex items-center justify-center text-white">
         <p className="text-gray-400">Loading workout...</p>
       </div>
     );
@@ -52,7 +52,7 @@ export default function WorkoutDetails() {
           <img
             src={workout.image}
             alt={workout.name}
-            className="h-full max-h-[550px] w-full rounded-md object-cover"
+            className="pt-5 h-full max-h-[550px] w-full rounded-md object-cover"
           />
         </div>
 
@@ -60,7 +60,7 @@ export default function WorkoutDetails() {
         <div>
 
           {/* Muscle Groups */}
-          <div className="mb-4 flex flex-wrap gap-2">
+          <div className="pt-5 mb-4 flex flex-wrap gap-2">
             {workout.muscleGroups.map((muscle) => (
               <span
                 key={muscle}

@@ -39,10 +39,6 @@ export default function WorkoutLibrary() {
     >
       {/* Heading */}
       <div className="mb-8">
-        <p className="text-xs font-medium tracking-[0.2em] text-[#ccff00]">
-          EXPLORE
-        </p>
-
         <h2 className="mt-2 text-3xl font-bold">
           THE LIBRARY
         </h2>
@@ -53,7 +49,7 @@ export default function WorkoutLibrary() {
       </div>
 
       {/* Workout Cards */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 w-full">
         {workouts.map((workout) => (
           <Link
             key={workout.id}
@@ -64,7 +60,7 @@ export default function WorkoutLibrary() {
             <img
               src={workout.image}
               alt={workout.name}
-              className="h-44 w-full object-cover"
+              className="h-70 w-full object-cover"
             ></img>
 
             {/* Content */}
